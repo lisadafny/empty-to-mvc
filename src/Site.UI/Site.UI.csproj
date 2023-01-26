@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Command\Interface\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>

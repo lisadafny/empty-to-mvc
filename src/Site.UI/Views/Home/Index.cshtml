@@ -1,1 +1,6 @@
-﻿
+﻿@using Site.UI.Repository.Interface
+@inject IPedidoRepository PedidoRepository
+
+<div class="container">
+    <h1>@PedidoRepository.ObterPedido().Id</h1>
+</div>
