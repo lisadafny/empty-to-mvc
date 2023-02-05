@@ -6,9 +6,9 @@ namespace Site.UI.Repository
 {
     public class PedidoRepository : IPedidoRepository
     {
-        public Pedido ObterPedido()
+        public Order ObterPedido()
         {
-            return new Pedido();
+            return new Order();
         }
     }
 }

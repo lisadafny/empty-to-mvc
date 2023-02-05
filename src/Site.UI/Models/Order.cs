@@ -1,10 +1,10 @@
 ﻿namespace Site.UI.Models
 {
-    public class Pedido
+    public class Order
     {
         public Guid Id { get; set; }
 
-        public Pedido()
+        public Order()
         {
             Id = Guid.NewGuid();
         }
