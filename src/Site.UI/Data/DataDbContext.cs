@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Site.UI.Models;
 
 namespace Site.UI.Data
 {
@@ -8,5 +9,7 @@ namespace Site.UI.Data
         {
                 
         }
+
+        public DbSet<Client> Clients { get; set; }
     }
 }
