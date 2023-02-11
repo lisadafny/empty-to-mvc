@@ -12,7 +12,16 @@ namespace Site.UI.Controllers
         }
         public IActionResult Index()
         {
-            var client = new Client();
+            var client = new Client {
+            Name = "Lisa",
+            Email = "lisa.dafny@notarealemail.com",
+            Birthdate= DateTime.Now
+            };
+
+            _dataDb.Clients.Add(client);
+            _dataDb.SaveChanges();
+
+
             return View(client);
         }
     }
