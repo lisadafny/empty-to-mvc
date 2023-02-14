@@ -3,6 +3,7 @@ using Site.UI.Config.Command;
 using Site.UI.Config.Repository;
 using Site.UI.Config.Service;
 using Site.UI.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Configuration
 
 builder.Services.AddDbContext<DataDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataDbContext")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<SiteUIContext>();
 
 builder.Services.ConfigCommand();
 builder.Services.ConfigService();
@@ -31,5 +35,6 @@ app.UseStaticFiles();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseAuthentication();;
 
 app.Run();
